@@ -16,6 +16,12 @@ class ClientsTest extends TestCase
 
     public function testExample()
     {
-        $this->assertDatabaseHas('clients', ['name' => 'vishal']);
+        $this->post('users', [
+            'name' => 'jd',
+            'email' => 'jd@razorpay.com',
+        ]);
+
+        $this->assertDatabaseHas('clients', ['name' => 'jd', 'email' => 'jd@razorpay.com']);
+
     }
 }
